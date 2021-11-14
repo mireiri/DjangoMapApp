@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>New</title>
+        <style>
+            body {padding: 10px;}
+            .link_button {
+                border-radius: 5px;
+                background-color: gray;
+                padding: 5px;
+                text-decoration: none;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <p><a href="https://www.google.co.jp/maps/" 
+              target="_blank" rel="noopener noreferrer" 
+              class="link_button">Google Maps</a></p>
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+            {{ tripform.as_p }}
+            <button type="submit">送信</button>
+        </form>
+        <p><a href="/">一覧画面に戻る</a></p>
+    </body>
+</html>

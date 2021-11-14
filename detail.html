@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Detail</title>
+        <style>
+            body {padding: 10px;}
+            .map {width: 50vw;}
+            .edit_button {
+                border-radius: 5px;
+                background-color: lightblue;
+                padding: 5px;
+                text-decoration: none;
+                color: black;
+            }
+            .delete_button {
+                border-radius: 5px;
+                background-color: darkred;
+                padding: 5px;
+                text-decoration: none;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <h2>【 {{ data.title }} 】</h2>
+        <p>{{ data.content}}</p>
+
+        <div class="map">
+            <p>{{ map | safe }}</p>
+        </div>
+
+        <a href="{% url 'edit' id=data.id %}" class="edit_button">編集</a>
+        <a href="{% url 'delete' id=data.id %}" class="delete_button">削除</a>
+        
+        <p><a href="{% url 'index' %}">一覧画面に戻る</a></p>
+    </body>
+</html>
+

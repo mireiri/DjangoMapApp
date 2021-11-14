@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Edit</title>
+        <style>body {padding: 10px;}</style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <form action="{% url 'update' id=data.id %}" method="POST">
+            {% csrf_token %}
+            {{ tripform.as_p}}
+            <button type="submit">送信</button>
+        </form>
+        <p></p>
+        <a href="/">一覧画面に戻る</a>
+    </body>
+</html>

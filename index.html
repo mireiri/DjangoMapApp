@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Top</title>
+        <style>body {padding: 10px;}</style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+
+        <table border="1" width="400">
+            <tr align="center">
+                <th>タイトル</th><th>登録日</th>
+            </tr>
+            {% for i in all_data %}
+                <tr align="center">
+                    <td><a href="{% url 'detail' id=i.id %}">{{ i.title }}</a></td>
+                    <td>{{ i.create_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <p><a href="{% url 'new' %}">新規作成</a></p>
+    </body>
+</html>
